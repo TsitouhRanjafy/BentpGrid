@@ -1,0 +1,118 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin col-box(){
+    border: solid 1px #8f8f8fcc;
+    flex: 1;
+    border-radius: 1em;
+    backdrop-filter: blur(5px);
+    transition: 200ms ease-in-out;
+    &:hover {
+        border: solid 1px #e9e9e9cc;
+        transform: scale(1.02);
+        transition: 200ms ease-in-out;
+    }
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../feuille_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container{
+        height: 85vh;
+        width: 100vw;
+        border-radius: 1em;
+        padding: 2em;
+        display: flex;
+        gap: 1em;
+        .row{
+    
+            border-radius: 1em;
+            &.row-1{
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .col{
+            
+                    border-radius: 1em;
+                    display: flex;
+                    gap: 1em;
+                    &.col-1{
+                        flex: 1;
+                        flex-direction: row;
+                    }
+                    &.col-2{
+                        flex: 1;
+                        flex-direction: column;
+                    }
+                    .col-box{
+                        @include col-box();
+                    }
+                }
+            }
+            &.row-2{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .col-box{
+                    @include col-box();
+                }
+            }
+            &.row-3{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                .col-box{
+                    @include col-box();
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px)  {
+    .container {
+        flex-direction: column;
+        .row-1 {
+            flex-direction: row !important;
+            .col-1{
+                flex-direction: column !important;
+                flex: 2 !important;
+            }
+            .col-2{
+                flex: 1 !important;
+            }
+        }
+        .row-2 {
+            flex-direction: row !important;
+        }
+        .row-3 {
+            flex-direction: row !important;
+        }
+    }
+}
+
+@media (max-width:650px) {
+    .container{
+        gap: 0.5em !important;
+    }
+    .row{
+        gap: 0.5em !important;
+        .col{
+            gap: 0.5em !important;
+        }
+    }
+}
