@@ -1,4 +1,6 @@
-
+* {
+    
+}
 
 * {
     margin: 0;
@@ -25,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../feuille_bg.jpg);
+    background-image: url(../img/feuille_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     .container{
@@ -51,10 +53,34 @@ body {
                     &.col-1{
                         flex: 1;
                         flex-direction: row;
+                        .col-box-1{
+                            background-image: url(../img/noel.webp) !important;
+                            background-size: cover !important;
+                            background-repeat: no-repeat !important;
+                            background-position: center;
+                        }
+                        .col-box-2{
+                            background-image: url(../img/arbre-3.png) !important;
+                            background-size: 100% !important;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
                     }
                     &.col-2{
                         flex: 1;
                         flex-direction: column;
+                        .col-box-1{
+                            background-image: url(../img/boulle-2.png) !important;
+                            background-size: cover !important;
+                            background-repeat: no-repeat !important;
+                            background-position: center;
+                        }
+                        .col-box-2{
+                            background-image: url(../img/2024.jpg) !important;
+                            background-size: cover !important;
+                            background-repeat: no-repeat !important;
+                            background-position: center;
+                        }
                     }
                     .col-box{
                         @include col-box();
@@ -68,6 +94,24 @@ body {
                 gap: 1em;
                 .col-box{
                     @include col-box();
+                    &:nth-child(1){
+                        background:url(../img/boulle.png);
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    &:nth-child(2){
+                        background-image: url(../img/cadeaux-5.png) !important; 
+                        background-size: 150px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    &:nth-child(3){
+                        background-image: url(../img/25-1.jpg) !important; 
+                        background-size: 200%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
                 }
             }
             &.row-3{
@@ -77,6 +121,16 @@ body {
                 gap: 1em;
                 .col-box{
                     @include col-box();
+                    &:nth-child(1){
+                        background-image: url(../img/2024-1.png);
+                        background-size: cover;
+                        background-position: center;
+                    }
+                    &:nth-child(2){
+                        background-image: url(../img/joyeux-noel.webp);
+                        background-size: 100%;
+                        background-position: center;
+                    }
                 }
             }
         }
